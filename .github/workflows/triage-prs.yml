@@ -33,7 +33,7 @@ jobs:
     if: always()
     uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-pr-requirements.yml@tidy-dev/iterations
     permissions:
-      issues: read
+      issues: write
       pull-requests: write
 
   close-no-help-wanted:
