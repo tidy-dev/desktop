@@ -7,13 +7,13 @@ on:
 jobs:
   label-incoming:
     if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'unlabeled'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-label-incoming.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-label-incoming.yml@tidy-dev/iterations
     permissions:
       issues: write
 
   close-invalid:
     if: github.event.action == 'labeled'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-invalid.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-invalid.yml@tidy-dev/iterations
     permissions:
       contents: read
       issues: write
@@ -21,13 +21,13 @@ jobs:
 
   close-single-word:
     if: github.event.action == 'opened'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-single-word-issues.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-single-word-issues.yml@tidy-dev/iterations
     permissions:
       issues: write
 
   close-off-topic:
     if: github.event.action == 'labeled'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-off-topic.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-off-topic.yml@tidy-dev/iterations
     permissions:
       issues: write
 
@@ -53,13 +53,13 @@ jobs:
 
   on-issue-close:
     if: github.event.action == 'closed'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-on-issue-close.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-on-issue-close.yml@tidy-dev/iterations
     permissions:
       issues: write
 
   # discuss:
   #   if: github.event.action == 'labeled'
-  #   uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-discuss.yml@main
+  #   uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-discuss.yml@tidy-dev/iterations
   #   with:
   #     target_repo: 'your-org/your-internal-repo'
   #     cc_team: '@your-org/your-team'

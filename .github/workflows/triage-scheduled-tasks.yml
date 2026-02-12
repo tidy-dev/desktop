@@ -10,18 +10,18 @@ on:
 
 jobs:
   no-response:
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-no-response-close.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-no-response-close.yml@tidy-dev/iterations
     permissions:
       issues: write
 
   pr-requirements:
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-pr-requirements.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-pr-requirements.yml@tidy-dev/iterations
     permissions:
       issues: read
       pull-requests: write
 
   #stale:
   #  if: github.event.schedule == '30 1 * * *'
-  #  uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-stale-issues.yml@main
+  #  uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-stale-issues.yml@tidy-dev/iterations
   #  permissions:
   #    issues: write

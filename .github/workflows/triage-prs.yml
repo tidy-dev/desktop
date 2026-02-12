@@ -7,7 +7,7 @@ on:
 jobs:
   close-invalid:
     if: github.event.action == 'labeled'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-invalid.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-invalid.yml@tidy-dev/iterations
     permissions:
       contents: read
       issues: write
@@ -15,7 +15,7 @@ jobs:
 
   close-from-default-branch:
     if: github.event.action == 'opened'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-from-default-branch.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-from-default-branch.yml@tidy-dev/iterations
     # with:
     #   default_branch: 'main'
     permissions:
@@ -23,7 +23,7 @@ jobs:
 
   label-external-pr:
     if: github.event.action == 'opened' || github.event.action == 'reopened'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-label-external-pr.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-label-external-pr.yml@tidy-dev/iterations
     permissions:
       pull-requests: write
       repository-projects: read
@@ -31,26 +31,26 @@ jobs:
   pr-requirements:
     needs: label-external-pr
     if: always()
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-pr-requirements.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-pr-requirements.yml@tidy-dev/iterations
     permissions:
       issues: read
       pull-requests: write
 
   close-no-help-wanted:
     if: github.event.action == 'labeled'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-no-help-wanted.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-close-no-help-wanted.yml@tidy-dev/iterations
     permissions:
       pull-requests: write
 
   ready-for-review:
     if: github.event.action == 'labeled'
-    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-ready-for-review.yml@main
+    uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-ready-for-review.yml@tidy-dev/iterations
     permissions:
       pull-requests: write
 
   # discuss:
   #   if: github.event.action == 'labeled'
-  #   uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-discuss.yml@main
+  #   uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-discuss.yml@tidy-dev/iterations
   #   with:
   #     target_repo: 'your-org/your-internal-repo'
   #     cc_team: '@your-org/your-team'
