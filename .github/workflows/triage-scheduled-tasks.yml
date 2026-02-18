@@ -23,6 +23,7 @@ jobs:
     uses: desktop/gh-cli-and-desktop-shared-workflows/.github/workflows/triage-contributor-input-needed.yml@tidy-dev/requested-changes-pr
     permissions:
       pull-requests: write
+      issues: write
 
   #stale:
   #  if: github.event.schedule == '30 1 * * *'
