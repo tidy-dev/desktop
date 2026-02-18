@@ -24,6 +24,9 @@ jobs:
     permissions:
       pull-requests: write
       issues: write
+    with:
+      days_until_warn: 0
+      days_until_close: 1
 
   #stale:
   #  if: github.event.schedule == '30 1 * * *'
