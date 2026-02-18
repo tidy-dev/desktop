@@ -25,8 +25,8 @@ jobs:
       pull-requests: write
       issues: write
     with:
-      days_until_warn: 0
-      days_until_close: 1
+      days_until_warn: 7
+      days_until_close: 0
 
   #stale:
   #  if: github.event.schedule == '30 1 * * *'
